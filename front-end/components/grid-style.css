@@ -1,0 +1,48 @@
+.grid-style {
+  display: grid;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-style .grid-child {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-style .grid-child::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #50c878;
+  animation: spin 4s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.grid-style .grid-child span {
+  position: absolute;
+  inset: 0px 2px 2px;
+  background-color: #222;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.grid-style-blur {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000013;
+  backdrop-filter: blur(10px);
+}
