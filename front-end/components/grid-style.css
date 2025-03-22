@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid white;
 }
 
 .grid-style .grid-child::before {
@@ -27,7 +28,7 @@
 .grid-style .grid-child span {
   position: absolute;
   inset: 0px 2px 2px;
-  background-color: #222;
+  background-color: #efefef;
 }
 
 @keyframes spin {
@@ -44,5 +45,5 @@
   height: 100vh;
   width: 100vw;
   background-color: #00000013;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }

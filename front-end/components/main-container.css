@@ -1,0 +1,10 @@
+.main-container {
+  position: fixed;
+  width: 95vw;
+  height: 95vh;
+  background-color: #bdbdbd5e;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1.2rem;
+}
