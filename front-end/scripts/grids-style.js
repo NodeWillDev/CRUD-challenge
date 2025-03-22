@@ -14,5 +14,3 @@ for (let i = 0; i < lines; i++) {
   children.appendChild(document.createElement("span"));
   element.appendChild(children);
 }
-const data = await fetch("http://127.0.0.1:8000/api/tasks/all");
-console.log(await data.json());
