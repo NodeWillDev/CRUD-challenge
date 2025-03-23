@@ -1,11 +1,10 @@
 .tasks-container {
   width: 100%;
   height: 85%;
-  /* Make modal design - HELPPER */
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   gap: 2em;
   overflow-y: auto;
+  position: relative;
+  margin-top: 2em;
 }

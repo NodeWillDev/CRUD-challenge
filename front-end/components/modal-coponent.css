@@ -3,11 +3,8 @@
   font-family: "Archivo Black", sans-serif;
   width: 42rem;
   height: 42rem;
-  max-width: 100%;
-  max-height: 100%;
   padding: 1.5rem;
   background-color: var(--background);
-  transition: 700ms;
   display: grid;
   grid-template-areas:
     "TITLE TITLE"
@@ -15,6 +12,7 @@
     "DESCRIPTION DESCRIPTION";
   align-content: start;
   gap: 2em;
+  border: 1px solid transparent;
 }
 
 .modal-component .title-container {
@@ -78,25 +76,26 @@
 
 .modal-component:hover .title-container h1 {
   letter-spacing: 4px;
-  color: #46e274;
+  color: var(--background);
 }
 .modal-component:hover .title-container h1::before {
-  background-color: #46e274;
+  background-color: var(--background);
 }
 
 .modal-component:hover .status-container h2 {
   font-weight: 800;
+  color: var(--background);
 }
 .modal-component:hover .description-container p {
   color: white;
 }
 .modal-component:hover {
-  background-color: #00000067;
+  background-color: #00000044;
+  border: 1px solid var(--background);
 }
 
 .modal-component .description-container {
   grid-area: DESCRIPTION;
-  background-color: red;
   /* font-size: 2em; */
 }
 
@@ -104,4 +103,24 @@
   color: #3d3d3d;
   font-family: "Red Hat Mono", monospace;
   font-size: 1.5em;
+}
+
+.modal-component .description-container button {
+  background: none;
+  padding: 0.3em;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 5px double white;
+  margin-top: 1em;
+  font-weight: bold;
+  transition: 300ms;
+  color: #3d3d3d;
+}
+
+.modal-component .description-container button:hover {
+  border: 5px double var(--background);
+  color: white;
+  letter-spacing: 2px;
 }

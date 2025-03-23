@@ -5,6 +5,7 @@
   background-color: #bdbdbd5e;
   display: flex;
   justify-content: center;
+  align-content: start;
   flex-wrap: wrap;
   padding: 1.2rem;
 }

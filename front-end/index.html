@@ -29,20 +29,29 @@
       <div class="search-container">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" placeholder="Search..." />
+        <div class="field-container">
+          <select name="search-by">
+            <option value="title">Title</option>
+            <option value="status">Status</option>
+            <option value="description">Description</option>
+          </select>
+        </div>
       </div>
       <div class="tasks-container">
         <div class="modal-component">
           <div class="title-container">
-            <h1>Title</h1>
+            <h1 id="title"><!---Title---></h1>
           </div>
           <div class="status-container">
-            <h2>Status: <span>Done</span></h2>
+            <h2>
+              Status: <span id="status"><!---Done---></span>
+            </h2>
             <div class="date-container">
-              <h2>DATE</h2>
+              <h2 id="date"><!---DATE ---></h2>
             </div>
           </div>
           <div class="description-container">
-            <p>a</p>
+            <p id="description"><!---Description---></p>
           </div>
         </div>
       </div>

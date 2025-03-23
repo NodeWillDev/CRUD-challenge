@@ -3,7 +3,7 @@ const data = {
     background: "#46e274",
   },
   2: {
-    background: "#5c14ff",
+    background: "#fbff00",
   },
   3: {
     background: "#ff3434",
@@ -15,5 +15,3 @@ const data = {
  * @returns {{background: string}}
  */
 export const statusColor = (status) => data[status];
-
-console.log(statusColor(2));

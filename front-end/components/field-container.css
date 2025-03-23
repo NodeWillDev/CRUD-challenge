@@ -1,0 +1,25 @@
+.field-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field-container select {
+  padding: 0.7em;
+  font-size: 0.7em;
+  background: #00000046;
+  text-align: center;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #222;
+}
+
+.field-container select option {
+  border: none;
+}
+
+.field-container:focus-within select {
+  background-color: #ffffff1f;
+  border-bottom: 1px solid tomato;
+}

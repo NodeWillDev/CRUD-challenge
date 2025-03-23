@@ -14,5 +14,5 @@ export const getAll = async () => {
     method: "GET",
   });
 
-  return await data.json();
+  return data.status == "200" ? await data.json() : [];
 };
