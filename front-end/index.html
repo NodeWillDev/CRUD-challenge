@@ -32,13 +32,13 @@
         <div class="field-container">
           <select name="search-by">
             <option value="title">Title</option>
-            <option value="status">Status</option>
             <option value="description">Description</option>
+            <option value="status">Status</option>
           </select>
         </div>
       </div>
       <div class="tasks-container">
-        <div class="modal-component">
+        <div style="display: none" class="modal-component">
           <div class="title-container">
             <h1 id="title"><!---Title---></h1>
           </div>
@@ -53,6 +53,22 @@
           <div class="description-container">
             <p id="description"><!---Description---></p>
           </div>
+          <div class="buttons-container">
+            <div class="check-button">
+              <div class="box-check">
+                <div class="axle-x"></div>
+                <div class="axle-y"></div>
+              </div>
+              <label>COMPLETED</label>
+            </div>
+            <div class="edit-delete">
+              <button>EDIT</button>
+              <button>DELETE</button>
+            </div>
+          </div>
+        </div>
+        <div style="display: none" class="not-found-container">
+          <h1>Not Found</h1>
         </div>
       </div>
     </main>

@@ -1,7 +1,7 @@
-const data = { 1: "COMPLETED", 2: "PROCEEDING...", 3: "NOT STARTED" };
+import { STATUS } from "../status/status.js";
 
 /**
- * @param {number} status
+ * @param {number} value
  * @return {string}
  */
-export const statusFormat = (status) => data[status];
+export const statusFormat = (value) => STATUS[value];
