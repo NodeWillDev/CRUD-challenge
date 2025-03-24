@@ -222,6 +222,45 @@
 }
 
 .modal-component .buttons-container .edit-delete {
-  background-color: red;
   padding: 0.3em;
+  width: 100%;
+  display: flex;
+  gap: 0.5em;
+  justify-content: space-around;
+}
+
+.modal-component .buttons-container .edit-delete button {
+  border: 1px solid transparent;
+  padding: 0.6em;
+  cursor: pointer;
+}
+
+.modal-component .buttons-container .edit-delete button:nth-child(1) {
+  background-color: white;
+  color: #9632eb;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: 300ms;
+}
+
+.modal-component .buttons-container .edit-delete button:nth-child(1):hover {
+  background-color: #9632eb;
+  color: white;
+  transform: scale(1.08);
+}
+
+.modal-component .buttons-container .edit-delete button:nth-child(2) {
+  background-color: white;
+  color: #ff3434;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: 300ms;
+}
+
+.modal-component .buttons-container .edit-delete button:nth-child(2):hover {
+  background-color: #ff3434;
+  color: white;
+  transform: scale(1.08);
 }

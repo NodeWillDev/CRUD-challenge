@@ -5,6 +5,7 @@
 @import url("./components/modal-coponent.css");
 @import url("./components/field-container.css");
 @import url("./components/not-found-container.css");
+@import url("./components/edit-container.css");
 * {
   margin: 0;
   padding: 0;

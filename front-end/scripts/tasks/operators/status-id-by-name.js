@@ -1,4 +1,4 @@
-import { STATUS } from "../status/status.js";
+import { STATUS } from "../status/status-tag.js";
 /**
  *
  * @param {string} data

@@ -1,17 +1,7 @@
-const data = {
-  1: {
-    background: "#46e274",
-  },
-  2: {
-    background: "#fbff00",
-  },
-  3: {
-    background: "#ff3434",
-  },
-};
+import { COLORS } from "../status/status-color.js";
 /**
  *
  * @param {number} status
  * @returns {{background: string}}
  */
-export const statusColor = (status) => data[status];
+export const statusColor = (status) => COLORS[status];
