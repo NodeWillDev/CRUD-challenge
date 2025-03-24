@@ -7,8 +7,6 @@ export const loadStatus = () => {
     option.value = data[0];
     option.innerHTML = data[1];
     option.style.setProperty("--status-color", statusColor(data[0]).background);
-    document.getElementById("status-id").appendChild(option);
+    document.getElementById("edit-select-status").appendChild(option);
   });
 };
-
-console.log(loadStatus());

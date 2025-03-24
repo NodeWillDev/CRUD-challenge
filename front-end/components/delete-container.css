@@ -1,0 +1,77 @@
+.delete-container {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 100%;
+  transition: 700ms;
+}
+
+.delete-container.active {
+  bottom: 0%;
+}
+
+.delete-container .contents {
+  padding: 1em;
+  background-color: #222222bd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  border-radius: 20px;
+  border: 5px solid white;
+  transition: 500ms;
+}
+
+.delete-container .contents:hover {
+  border: 5px solid #fbff00;
+}
+.delete-container .contents p {
+  font-size: 3em;
+  color: white;
+}
+
+.delete-container .contents .buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.delete-container .contents .buttons button {
+  padding: 0.7em;
+  font-size: 1.7em;
+  transition: 300ms;
+  border: 5px double transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-container .contents .buttons button:nth-child(1) {
+  background-color: white;
+  border: 5px double #46e274;
+  color: #46e274;
+}
+
+.delete-container .contents .buttons button:nth-child(1):hover {
+  background-color: #46e274;
+  border: 5px double white;
+  color: white;
+}
+
+.delete-container .contents .buttons button:nth-child(2) {
+  background-color: white;
+  border: 5px double #ff3434;
+  color: #ff3434;
+}
+
+.delete-container .contents .buttons button:nth-child(2):hover {
+  background-color: #ff3434;
+  border: 5px double white;
+  color: white;
+}

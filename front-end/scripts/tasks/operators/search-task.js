@@ -1,4 +1,4 @@
-import { getAll } from "./get-all.js";
+import { allTasks } from "../../api/API.js";
 import { updateTask } from "./update-tasks.js";
 import { getIdStatusByName } from "./status-id-by-name.js";
 
@@ -7,7 +7,7 @@ const input = document.querySelector(".search-container input");
 
 /** @type {HTMLSelectElement} */
 const field = document.querySelector('[name="search-by"]');
-const data = await getAll();
+const data = await allTasks();
 
 input.addEventListener("input", (event) => {
   updateTask(

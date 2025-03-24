@@ -1,5 +1,3 @@
-import { getAll } from "./tasks/operators/get-all.js";
-
 /** @type {HTMLDivElement} */
 const element = document.querySelector(".grid-style");
 

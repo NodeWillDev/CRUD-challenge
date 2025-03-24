@@ -72,21 +72,47 @@
         </div>
       </div>
     </main>
+    <!-- CONTAINER - EDIT [START]-->
+    <!-- CONTAINER - EDIT [START]-->
+    <!-- CONTAINER - EDIT [START]-->
     <div class="edit-container">
       <div class="close">X</div>
       <div class="basic-container">
         <div class="edit-title">
           <label>Title</label>
-          <input type="text" placeholder=" " />
+          <input id="edit-input-title" type="text" placeholder=" " />
         </div>
         <div class="edit-status">
           <!-- <label>Status</label>
           <input type="text" placeholder=" " /> -->
-          <select name="" id="status-id"></select>
+          <select name="" id="edit-select-status"></select>
         </div>
       </div>
       <div class="advanced-container">
-        <textarea name="" id=""></textarea>
+        <textarea
+          id="edit-text-area-description"
+          name=""
+          rows="4"
+          cols="50"
+          placeholder="Description..."
+        ></textarea>
+      </div>
+      <div class="buttons-container">
+        <button id="edit-container-button-save">SAVE</button>
+        <button id="edit-container-button-delete">DELETE</button>
+      </div>
+    </div>
+    <!-- CONTAINER - EDIT [END]-->
+    <!-- CONTAINER - EDIT [END]-->
+    <!-- CONTAINER - EDIT [END]-->
+
+    <div class="delete-container">
+      <div class="contents">
+        <p>Are you sure you want to delete this task?</p>
+        <div class="buttons">
+          <button id="delete-container-sure-yes">YES</button>
+          <button id="delete-container-sure-no">NO</button>
+        </div>
       </div>
     </div>
   </body>

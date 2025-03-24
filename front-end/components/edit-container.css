@@ -4,14 +4,22 @@
   height: 95vh;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  border: 1px solid #9632eb;
+  border: 10px solid #9632eb;
   border-radius: 10px;
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-areas:
+    "BASIC ADVANCED"
+    "BUTTONS BUTTONS";
   align-items: center;
   gap: 2em;
+  transition: 500ms;
+  bottom: 100%;
 }
 
+.edit-container.active {
+  bottom: 0%;
+}
 .edit-container .close {
   font-size: 5em;
   position: absolute;
@@ -30,20 +38,22 @@
 .edit-container .basic-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-self: start;
   height: 100%;
+  width: 100%;
   justify-content: center;
   gap: 2em;
   margin-left: 2em;
+  grid-area: BASIC;
 }
 
 .edit-container .basic-container div {
   padding: 1em;
   display: flex;
   align-items: center;
-  gap: 1.4em;
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
 .edit-container .basic-container div input {
@@ -51,6 +61,7 @@
   padding: 0.4em;
   font-size: 3.2em;
   outline: none;
+  align-self: center;
   background: #00000065;
   border: 2px solid white;
   color: white;
@@ -65,7 +76,7 @@
 
 .edit-container .basic-container div:has(input:focus) label,
 .edit-container .basic-container div:has(input:not(:placeholder-shown)) label {
-  top: 28%;
+  top: 10%;
   left: 1%;
   color: #9632eb;
   font-weight: 500;
@@ -76,11 +87,12 @@
 }
 .edit-container .basic-container div label {
   font-size: 4em;
+  align-self: center;
   position: absolute;
-  left: 3%;
-  top: 43%;
+  left: 5%;
   color: white;
   transition: 400ms;
+  text-align: center;
 }
 
 .edit-container .edit-status {
@@ -89,8 +101,7 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  gap: 2em;
-  margin-left: 2em;
+  align-self: start;
 }
 
 .edit-container .edit-status select {
@@ -104,10 +115,75 @@
   border-radius: 10px;
   transition: 500ms;
   letter-spacing: 2.5px;
+  border: 1px solid #9632eb;
 }
 
 .edit-container .edit-status select option {
   background-color: #222;
   color: var(--status-color);
-  border: 5px solid red;
+}
+
+.edit-container .advanced-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 95%;
+  flex: 1;
+  grid-area: ADVANCED;
+}
+
+.edit-container .advanced-container textarea {
+  outline: none;
+  max-width: 30em;
+  max-height: 30em;
+  font-size: 3em;
+  padding: 1em;
+  color: white;
+  background-color: #222;
+}
+
+.edit-container .buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  gap: 2em;
+  width: 100%;
+  grid-area: BUTTONS;
+}
+.edit-container .buttons-container button {
+  border: 5px double transparent;
+  padding: 1em;
+  cursor: pointer;
+}
+.edit-container .buttons-container button:nth-child(1) {
+  background-color: white;
+  color: #46e274;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: 300ms;
+}
+
+.edit-container .buttons-container button:nth-child(1):hover {
+  background-color: #46e274;
+  color: white;
+  transform: scale(1.08);
+  border: 5px double white;
+}
+
+.edit-container .buttons-container button:nth-child(2) {
+  background-color: white;
+  color: #ff3434;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: 300ms;
+}
+
+.edit-container .buttons-container button:nth-child(2):hover {
+  background-color: #ff3434;
+  color: white;
+  transform: scale(1.08);
+  border: 5px double white;
 }

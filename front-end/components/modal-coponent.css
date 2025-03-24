@@ -25,7 +25,9 @@
   color: #3d3d3d;
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
   justify-content: center;
 }
 .modal-component .title-container h1::before {
@@ -93,12 +95,16 @@
 .modal-component .description-container {
   grid-area: DESCRIPTION;
   font-size: 1.2em;
+  display: block;
 }
 
 .modal-component .description-container p {
   color: #3d3d3d;
   font-family: "Red Hat Mono", monospace;
   font-size: 1.5em;
+  word-wrap: break-word;
+  width: 21em;
+  background-color: red;
 }
 
 .modal-component .description-container button {
@@ -107,7 +113,6 @@
   border: none;
   font-size: 1.5em;
   cursor: pointer;
-  border-radius: 20px;
   border: 5px double white;
   margin-top: 1em;
   font-weight: bold;
@@ -145,28 +150,38 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 5px;
   cursor: pointer;
 }
 
 .modal-component .buttons-container .check-button .box-check .axle-x {
   position: absolute;
-  background-color: #3d3d3d;
+  background-color: #222;
   width: 100%;
   height: 3px;
-  left: 50%;
+  left: 48%;
   transform: rotate(90deg);
   display: flex;
   transition: 300ms;
+}
+.modal-component:hover .buttons-container .check-button .box-check .axle-x,
+.modal-component:hover .buttons-container .check-button .box-check::before,
+.modal-component:hover .buttons-container .check-button .box-check .axle-y,
+.modal-component:hover .buttons-container .check-button .box-check::after,
+.modal-component:hover
+  .buttons-container
+  .check-button
+  .box-check.active
+  .axle-x {
+  background-color: var(--background);
 }
 
 .modal-component .buttons-container .check-button .box-check::before {
   content: "";
   position: absolute;
-  background-color: #3d3d3d;
+  background-color: #222;
   width: 100%;
   height: 3px;
-  left: -50%;
+  left: -48%;
   transform: rotate(90deg);
   display: flex;
   transition: 300ms;
@@ -174,10 +189,10 @@
 
 .modal-component .buttons-container .check-button .box-check .axle-y {
   position: absolute;
-  background-color: #3d3d3d;
+  background-color: #222;
   width: 100%;
   height: 3px;
-  bottom: 98%;
+  bottom: 95%;
   display: flex;
   transition: 300ms;
 }
@@ -185,10 +200,10 @@
 .modal-component .buttons-container .check-button .box-check::after {
   content: "";
   position: absolute;
-  background-color: #3d3d3d;
+  background-color: #222;
   width: 100%;
   height: 3px;
-  top: 98%;
+  top: 90%;
   display: flex;
   transition: 300ms;
 }
@@ -197,28 +212,33 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  border-radius: 50px;
-  border: 5px solid black;
+  background-color: #222;
 }
 
 .modal-component .buttons-container .check-button .box-check.active .axle-y {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
-  border-radius: 50px;
-  border: 5px solid black;
 }
 
 .modal-component .buttons-container .check-button .box-check.active::before {
   left: -55%;
+  opacity: 0;
 }
 
 .modal-component .buttons-container .check-button .box-check.active::after {
   top: 100%;
+  opacity: 0;
 }
 
 .modal-component .buttons-container .check-button label {
   font-size: 2em;
+  transition: 300ms;
+  color: #222;
+}
+
+.modal-component:hover .buttons-container .check-button label {
+  color: var(--background);
 }
 
 .modal-component .buttons-container .edit-delete {
