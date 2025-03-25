@@ -2,7 +2,8 @@
   border-radius: 20px;
   font-family: "Archivo Black", sans-serif;
   width: 42rem;
-  height: auto;
+  height: 42rem;
+  max-width: 100%;
   padding: 1.5rem;
   background-color: var(--background);
   align-content: start;
@@ -103,7 +104,7 @@
   font-family: "Red Hat Mono", monospace;
   font-size: 1.5em;
   word-wrap: break-word;
-  width: 21em;
+  /* width: 21em; */
 }
 
 .modal-component .description-container button {

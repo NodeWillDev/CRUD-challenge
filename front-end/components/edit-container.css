@@ -15,6 +15,7 @@
   gap: 2em;
   transition: 500ms;
   bottom: 100%;
+  overflow-x: hidden;
 }
 
 .edit-container.active {
@@ -36,14 +37,14 @@
 }
 
 .edit-container .basic-container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-self: start;
+  align-self: center;
   height: 100%;
   width: 100%;
   justify-content: center;
-  gap: 2em;
-  margin-left: 2em;
+  gap: 5em;
   grid-area: BASIC;
 }
 
@@ -52,7 +53,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  height: 100%;
   width: 100%;
 }
 
@@ -76,7 +76,7 @@
 
 .edit-container .basic-container div:has(input:focus) label,
 .edit-container .basic-container div:has(input:not(:placeholder-shown)) label {
-  top: 10%;
+  top: -65%;
   left: 1%;
   color: #9632eb;
   font-weight: 500;
@@ -90,6 +90,7 @@
   align-self: center;
   position: absolute;
   left: 5%;
+  top: 20%;
   color: white;
   transition: 400ms;
   text-align: center;
@@ -99,7 +100,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   justify-content: center;
   align-self: start;
 }
@@ -126,16 +126,18 @@
 .edit-container .advanced-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 95%;
-  flex: 1;
+  height: 40em;
   grid-area: ADVANCED;
+  margin: 2em;
 }
 
 .edit-container .advanced-container textarea {
   outline: none;
-  max-width: 30em;
-  max-height: 30em;
+  max-width: 50em;
+  min-width: 5em;
+  max-height: 100%;
   font-size: 3em;
   padding: 1em;
   color: white;
@@ -186,4 +188,54 @@
   color: white;
   transform: scale(1.08);
   border: 5px double white;
+}
+
+@media screen and (max-width: 1480px) {
+  .edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .edit-container .basic-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 20em;
+  }
+  .edit-container .basic-container .edit-title {
+    /* background-color: green;
+    display: flex;
+    align-items: center; */
+  }
+  .edit-container .buttons-container {
+    margin-bottom: 12em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .edit-container .basic-container {
+    margin-top: 55em;
+  }
+  .edit-container {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .edit-container .basic-container {
+    margin-top: 55em;
+  }
+  .edit-container {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    overflow-y: auto;
+  }
+  .edit-container .buttons-container {
+    margin-bottom: 15em;
+  }
+  .edit-container .close {
+    top: 0;
+  }
 }

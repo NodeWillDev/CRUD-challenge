@@ -41,10 +41,10 @@ export const editModal = async (data) => {
   }).format(new Date(data.created_at));
   /** @type {HTMLPreElement} */
   description.innerHTML =
-    data.description.length > 355
-      ? data.description.slice(0, 355) + "..."
+    data.description.length > 100
+      ? data.description.slice(0, 100) + "..."
       : data.description;
-  if (data.description.length > 355) {
+  if (data.description.length > 100) {
     const more = document.createElement("button");
     more.textContent = "See More";
 
@@ -54,7 +54,7 @@ export const editModal = async (data) => {
       more.textContent = expanded ? "To Hide" : "See More";
       description.textContent = expanded
         ? data.description
-        : data.description.slice(0, 355) + "...";
+        : data.description.slice(0, 100) + "...";
     });
     if (modal.children[2].children[1]) modal.children[2].children[1].remove();
     description.parentNode.insertBefore(more, description.nextSibling);

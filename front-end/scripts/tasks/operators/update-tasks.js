@@ -45,10 +45,10 @@ export const updateTask = (tasks) => {
       }
     ).format(new Date(data.created_at));
     description.innerHTML =
-      data.description.length > 355
-        ? data.description.slice(0, 355) + "..."
+      data.description.length > 100
+        ? data.description.slice(0, 100) + "..."
         : data.description;
-    if (data.description.length > 355) {
+    if (data.description.length > 100) {
       const more = document.createElement("button");
       more.textContent = "See More";
       let expanded = false;
@@ -58,7 +58,9 @@ export const updateTask = (tasks) => {
 
         description.textContent = expanded
           ? data.description
-          : `${data.description.slice(0, 355)}...`;
+          : `${data.description.slice(0, 100)}...`;
+        modal.style.height = expanded ? `auto` : "42rem";
+        console.log(`${(data.description.length / 22) * 22}`);
       });
 
       description.parentNode.insertBefore(more, description.nextSibling);

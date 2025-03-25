@@ -46,12 +46,12 @@ export const updateTask = async (task) => {
  * @returns {Promise<TaskData>}
  */
 export const createTask = async (task) => {
-  const data = await fetch(API + `tasks/update/${task.id}`, {
+  const data = await fetch(API + `tasks/create/`, {
     headers: {
       "Content-Type": "application/json",
     },
     method: "POST",
-    body: task,
+    body: JSON.stringify(task),
   });
   return data.status == 200 ? await data.json() : [];
 };

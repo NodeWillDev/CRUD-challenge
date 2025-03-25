@@ -31,7 +31,7 @@
         <input type="text" placeholder="Search..." />
         <div class="field-container">
           <select name="search-by">
-            <option value="title">Title</option>
+            <option value="title">TITLE</option>
             <option value="description">Description</option>
             <option value="status">Status</option>
           </select>
@@ -78,11 +78,11 @@
     <!-- CONTAINER - EDIT [START]-->
     <!-- CONTAINER - EDIT [START]-->
     <!-- CONTAINER - EDIT [START]-->
-    <div class="edit-container">
+    <di class="edit-container">
       <div class="close">X</div>
       <div class="basic-container">
         <div class="edit-title">
-          <label>Title</label>
+          <label>TITLE</label>
           <input id="edit-input-title" type="text" placeholder=" " />
         </div>
         <div class="edit-status">
@@ -95,8 +95,8 @@
         <textarea
           id="edit-text-area-description"
           name=""
-          rows="4"
-          cols="50"
+          rows="20"
+          cols="80"
           placeholder="Description..."
         ></textarea>
       </div>
@@ -104,7 +104,7 @@
         <button id="edit-container-button-save">SAVE</button>
         <button id="edit-container-button-delete">DELETE</button>
       </div>
-    </div>
+    </di  v>
     <!-- CONTAINER - EDIT [END]-->
     <!-- CONTAINER - EDIT [END]-->
     <!-- CONTAINER - EDIT [END]-->
@@ -122,16 +122,18 @@
     <!-- CREATE TASK [START] -->
     <!-- CREATE TASK [START] -->
     <div class="create-task-container">
-      <div class="close">X</div>
       <div class="input-container">
-        <label for="">Tile</label>
-        <input type="text" placeholder="Ex: Take a run..." />
+        <label for="">TITLE</label>
+        <input id="create-task-input-title" type="text" placeholder="" />
       </div>
       <select
         name=""
         class="load-status"
         id="create-task-select-status"
       ></select>
+      <textarea name="" id="create-task-textarea-description"></textarea>
+      <button id="create-task-button-create">CREATE</button>
+      <div class="close">X</div>
     </div>
   </body>
 </html>
