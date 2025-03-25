@@ -38,8 +38,10 @@ class TasksRepository
      * @param array{id:int,title:string,status:int,description:string} $data
      * @return int
      */
-    public static function update(array $data): int
+    public static function update(array $data)
     {
-        return TaskModel::query()->where('id', $data['id'])->update($data);
+        $data = self::find($data['id']);
+        TaskModel::query()->where('id', $data['id'])->update($data);
+        return $data;
     }
 }

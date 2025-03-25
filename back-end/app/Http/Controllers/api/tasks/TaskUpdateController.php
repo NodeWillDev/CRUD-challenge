@@ -13,11 +13,11 @@ class TaskUpdateController extends Controller
     public function handle(Request $request, Response $response, int $id): Response
     {
         if (!($task = TasksRepository::find($id))) return new Response([], 404);
-        return new Response(TasksRepository::update([
+        return new Response(($task = TasksRepository::update([
             'id' => $id,
             'description' => ($request->get('description') ?? $task['description']),
             'title' => ($request->get('title') ?? $task['title']),
             'status' => ($request->get('status') ?? $task['id']),
-        ]), 200);
+        ])), $task ? 200 : 404);
     }
 }
