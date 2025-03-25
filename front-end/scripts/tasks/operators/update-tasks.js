@@ -60,7 +60,6 @@ export const updateTask = (tasks) => {
           ? data.description
           : `${data.description.slice(0, 100)}...`;
         modal.style.height = expanded ? `auto` : "42rem";
-        console.log(`${(data.description.length / 22) * 22}`);
       });
 
       description.parentNode.insertBefore(more, description.nextSibling);
@@ -68,7 +67,6 @@ export const updateTask = (tasks) => {
     const check = modal.children[3].children[0].children[0];
     check.addEventListener("click", async () => {
       data.status = check.classList.contains("active") ? 2 : 1;
-      console.log(data.status);
       await editModal({
         color: statusColor(data.status).background,
         id: data.id,

@@ -65,12 +65,3 @@ export const allTasks = async () => {
   });
   return data.status == 200 ? await data.json() : [];
 };
-
-// console.log
-//   await updateTask({
-//     id: 1,
-//     description: "2",
-//     status: 2,
-//     title: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-//   })
-// );
