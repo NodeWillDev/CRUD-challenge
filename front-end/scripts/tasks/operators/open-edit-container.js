@@ -7,10 +7,9 @@ document
     document.querySelector(".edit-container").classList.toggle("active");
   });
 
-export const openEditContainer = async (element) => {
+export const openEditContainer = async (event) => {
   TaskContext.setTaskid(
-    element.target.parentNode.parentNode.parentNode.getAttribute("task-id") ??
-      -1
+    event.target.parentNode.parentNode.parentNode.getAttribute("task-id") ?? -1
   );
   await updateContainers();
   document.querySelector(".edit-container").classList.toggle("active");

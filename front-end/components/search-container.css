@@ -34,3 +34,27 @@
 .search-container:focus-within i {
   color: #27924c;
 }
+
+.search-container .create-task {
+  display: flex;
+  align-items: center;
+}
+
+.search-container .create-task button {
+  padding: 1em;
+  font-size: 0.5em;
+  border: none;
+  background-color: #9632eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms;
+  letter-spacing: 2px;
+}
+
+.search-container .create-task button:hover {
+  background-color: white;
+  color: #46e274;
+  transform: scale(1.1);
+}

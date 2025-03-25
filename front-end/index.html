@@ -36,6 +36,9 @@
             <option value="status">Status</option>
           </select>
         </div>
+        <div class="create-task">
+          <button>CREATE TASK</button>
+        </div>
       </div>
       <div class="tasks-container">
         <div style="display: none" class="modal-component">
@@ -85,7 +88,7 @@
         <div class="edit-status">
           <!-- <label>Status</label>
           <input type="text" placeholder=" " /> -->
-          <select name="" id="edit-select-status"></select>
+          <select name="" class="load-status" id="edit-select-status"></select>
         </div>
       </div>
       <div class="advanced-container">
@@ -114,6 +117,21 @@
           <button id="delete-container-sure-no">NO</button>
         </div>
       </div>
+    </div>
+    <!-- CREATE TASK [START] -->
+    <!-- CREATE TASK [START] -->
+    <!-- CREATE TASK [START] -->
+    <div class="create-task-container">
+      <div class="close">X</div>
+      <div class="input-container">
+        <label for="">Tile</label>
+        <input type="text" placeholder="Ex: Take a run..." />
+      </div>
+      <select
+        name=""
+        class="load-status"
+        id="create-task-select-status"
+      ></select>
     </div>
   </body>
 </html>

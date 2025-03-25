@@ -7,8 +7,8 @@ const input = document.querySelector(".search-container input");
 
 /** @type {HTMLSelectElement} */
 const field = document.querySelector('[name="search-by"]');
-const data = await allTasks();
-
+let data = [];
+input.addEventListener("focus", async () => (data = await allTasks()));
 input.addEventListener("input", (event) => {
   updateTask(
     event.target.value.length < 1

@@ -1,5 +1,6 @@
 import { TaskContext } from "./context/TaskContext.js";
 import { editModal } from "./edit-modal.js";
+import { openDeleteContainer } from "./open-delete-container.js";
 import { statusColor } from "./status-color.js";
 
 document
@@ -18,4 +19,10 @@ document
       },
       true
     );
+  });
+document
+  .getElementById("edit-container-button-delete")
+  .addEventListener("click", async (event) => {
+    document.querySelector(".edit-container").classList.toggle("active");
+    openDeleteContainer(null, TaskContext.getTaskId());
   });

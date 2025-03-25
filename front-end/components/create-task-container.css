@@ -1,0 +1,118 @@
+.create-task-container {
+  position: absolute;
+  width: 95vw;
+  height: 95vh;
+  backdrop-filter: blur(20px);
+  transition: 300ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 10px solid #9632eb;
+  border-radius: 10px;
+  padding: 4em;
+  /* right: 100%; */
+}
+
+.create-task-container .close {
+  font-size: 5em;
+  position: absolute;
+  right: 2%;
+  transition: 300ms;
+  color: #9632eb;
+  font-weight: bold;
+  cursor: pointer;
+  top: 2%;
+}
+.create-task-container .close:hover {
+  color: white;
+}
+
+.create-task-container .input-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: end;
+  background-color: red;
+}
+
+.create-task-container .input-container input {
+  width: 100%;
+  padding: 0.4em;
+  font-size: 3.2em;
+  outline: none;
+  align-self: center;
+  background: #00000065;
+  border: 2px solid white;
+  color: white;
+  border-radius: 10px;
+  transition: 500ms;
+  letter-spacing: 2.5px;
+}
+
+.create-task-container .input-container input:focus {
+  border: 2px solid #0bae3d;
+}
+
+.create-task-container .input-containerv:has(input:focus) label,
+.create-task-container
+  .input-container
+  :has(input:not(:placeholder-shown))
+  label {
+  top: 10%;
+  left: 1%;
+  color: #9632eb;
+  font-weight: 500;
+}
+
+.create-task-container
+  .input-container
+  :has(input:not(:placeholder-shown))
+  input {
+  border: 2px solid #9632eb;
+}
+
+.create-task-container .input-container:has(input:focus) label,
+.create-task-container
+  .input-container:has(input:not(:placeholder-shown))
+  label {
+  color: #9632eb;
+  font-weight: 500;
+  color: red;
+  left: 1%;
+  bottom: 110%;
+}
+
+.create-task-container
+  .input-container:has(input:not(:placeholder-shown))
+  input {
+  border: 2px solid #9632eb;
+}
+.create-task-container .input-container label {
+  font-size: 4em;
+  align-self: center;
+  position: absolute;
+  left: 3%;
+  bottom: 10%;
+  color: white;
+  transition: 400ms;
+  text-align: center;
+}
+
+.create-task-container select {
+  /* width: 100%; */
+  padding: 0.4em;
+  font-size: 3.2em;
+  outline: none;
+  background: #00000065;
+  border: 2px solid white;
+  color: white;
+  border-radius: 10px;
+  transition: 500ms;
+  letter-spacing: 2.5px;
+  border: 1px solid #9632eb;
+}
+
+.create-task-container select option {
+  background-color: #222;
+  color: var(--status-color);
+}

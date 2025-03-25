@@ -7,6 +7,7 @@
 @import url("./components/not-found-container.css");
 @import url("./components/edit-container.css");
 @import url("./components/delete-container.css");
+@import url("./components/create-task-container.css");
 
 * {
   margin: 0;

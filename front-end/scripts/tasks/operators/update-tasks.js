@@ -9,14 +9,15 @@ import { statusFormat } from "./status-format.js";
  */
 export const updateTask = (tasks) => {
   const container = document.querySelector(".tasks-container");
-  Array.from(container.children)
+  const placeholder = document.querySelector(".not-found-container");
+
+  [...document.querySelector(".tasks-container").children]
     .slice(1)
     .forEach((element) => {
-      if (!element.classList.contains("not-found-container")) element.remove();
+      if (element !== placeholder) element.remove();
     });
-  if (tasks.length < 1)
-    document.querySelector(".not-found-container").style.display = "initial";
-  else document.querySelector(".not-found-container").style.display = "none";
+
+  placeholder.style.display = tasks.length ? "none" : "initial";
 
   tasks.forEach((data) => {
     /** @type {HTMLDivElement} */
@@ -48,40 +49,31 @@ export const updateTask = (tasks) => {
         ? data.description.slice(0, 355) + "..."
         : data.description;
     if (data.description.length > 355) {
-      console.log("maior poha");
       const more = document.createElement("button");
       more.textContent = "See More";
-
       let expanded = false;
-
       more.addEventListener("click", () => {
         expanded = !expanded;
         more.textContent = expanded ? "To Hide" : "See More";
+
         description.textContent = expanded
           ? data.description
-          : data.description.slice(0, 355) + "...";
-        // modal.style.height = expanded ? "auto" : ;
+          : `${data.description.slice(0, 355)}...`;
       });
+
       description.parentNode.insertBefore(more, description.nextSibling);
     }
-    modal.children[3].children[0].children[0].addEventListener(
-      "click",
-      async () => {
-        /** @type {HTMLDivElement} */
-        const check = modal.children[3].children[0].children[0];
-        await editModal(
-          {
-            color: check.classList.contains("active")
-              ? statusColor(2).background
-              : statusColor(1).background,
-            id: data.id,
-            status: check.classList.contains("active") ? 2 : 1,
-          },
-          true
-        );
-        check.classList.toggle("active");
-      }
-    );
+    const check = modal.children[3].children[0].children[0];
+    check.addEventListener("click", async () => {
+      data.status = check.classList.contains("active") ? 2 : 1;
+      console.log(data.status);
+      await editModal({
+        color: statusColor(data.status).background,
+        id: data.id,
+        status: data.status,
+      });
+    });
+    check.classList.toggle("active", data.status == 1);
     modal.children[3].children[1].children[0].addEventListener(
       "click",
       openEditContainer

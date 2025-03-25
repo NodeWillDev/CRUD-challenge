@@ -13,7 +13,7 @@ export const getSpecify = async (id) => {
 /**
  *
  * @param {number} id
- * @returns {TaskData}
+ * @returns {Promise<TaskData>}
  */
 export const deleteTask = async (id) => {
   const data = await fetch(API + `tasks/delete/${id}`, {
